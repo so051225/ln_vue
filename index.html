@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ln Vue</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+</head>
+<body>
+    <div id="app">
+        {{ message }}
+        <span v-if="seen">Can you see me?</span>
+        <hr>
+        <span v-bind:title="message">Hover here, you will see span title.</span>
+        <hr>
+        <ol>
+            <li v-for="todo in todos">
+                {{todo.text}}
+            </li>
+        </ol>
+        <hr>
+        <button v-on:click="reverseMessage">Reverse Message</button>
+        <hr>
+        <input v-model="message">
+        <hr>
+        <ol>
+            <todo-item v-for="todo in todos" v-bind:todo='item', >Test!</todo-item>
+        </ol>
+    </div>
+    <script src="index.js"></script>
+    
+</body>
+</html>
