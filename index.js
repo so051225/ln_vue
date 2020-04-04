@@ -1,7 +1,6 @@
 
 
 Vue.component('todo-item', {
-    // template: "<li>This a todo item. </li>"
     props:['todo'],
     template: '<li>{{todo.text}}</li>'
 })
@@ -15,12 +14,21 @@ var app = new Vue({
             {text: 'learn vue'},
             {text: 'learn react'},
             {text: 'learn finance'}
-        ]
+        ],
+        groceryList: [
+            {id:0, text:'Vegetables'},
+            {id:1, text:'Cheese'},
+            {id:2, text:'Whatever'},
+        ],
+        selectedItem: ''
   },
   methods:{
     reverseMessage: function() {
-        console.log(this)
         this.message = this.message.split(' ').reverse().join(' ')
+    },
+    selectItem: function(obj) {
+        console.log(obj)
+        this.selectedItem = 'test';
     }
   }
 });

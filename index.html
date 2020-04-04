@@ -24,10 +24,17 @@
         <button v-on:click="reverseMessage">Reverse Message</button>
         <hr>
         <input v-model="message">
+        
         <hr>
         <ol>
-            <todo-item v-for="todo in todos" v-bind:todo='item', >Test!</todo-item>
+            <todo-item 
+                v-for='item in groceryList'
+                v-bind:todo = 'item'
+                v-bind:key = 'item.id'
+                v-on:click="selectItem"
+            ></todo-item>
         </ol>
+        <span>Selected: {{selectedItem}} </span>
     </div>
     <script src="index.js"></script>
     
